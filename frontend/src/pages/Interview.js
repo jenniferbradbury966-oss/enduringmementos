@@ -428,6 +428,23 @@ const styles = `
     text-align: center;
     letter-spacing: 0.04em;
   }
+.btn-skip {
+  display: block;
+  margin: 8px auto 0;
+  background: none;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #888;
+  cursor: pointer;
+  text-decoration: underline;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.btn-skip:hover:not(:disabled) { color: var(--dusty-rose); }
+.btn-skip:disabled { opacity: 0.4; cursor: not-allowed; }
 
   /* Complete screen */
   .complete-screen {
@@ -697,6 +714,31 @@ export default function Interview() {
       sendMessage();
     }
   };
+  
+const skipQuestion = async () => {
+  if (loading) return;
+  const skipMsg = "I'd prefer to skip this question.";
+  const newMessages = [...messages, { role: "user", content: skipMsg, hidden: true }];
+  setMessages(newMessages);
+  setLoading(true);
+  setError(null);
+  try {
+    const apiMessages = newMessages.map(m => ({ role: m.role, content: m.content }));
+    const reply = await callClaude(apiMessages);
+    const updatedMessages = [...newMessages, { role: "assistant", content: reply }];
+    setMessages(updatedMessages);
+    const newCount = questionCount + 1;
+    setQuestionCount(newCount);
+    if (newCount >= QUESTION_COUNT_TARGET) {
+      localStorage.removeItem(SAVE_KEY);
+      setTimeout(() => setScreen("complete"), 1200);
+    }
+  } catch (e) {
+    setError("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const resetInterview = () => {
     localStorage.removeItem(SAVE_KEY);
@@ -841,6 +883,13 @@ export default function Interview() {
                 </button>
               </div>
               <p className="input-hint">Press Enter to send · Shift+Enter for new line · Your progress is saved automatically</p>
+<button 
+  className="btn-skip" 
+  onClick={skipQuestion}
+  disabled={loading}
+>
+  Skip this question
+</button>
             </div>
           </div>
         )}
@@ -856,8 +905,7 @@ export default function Interview() {
                 portrait of {name} from your words — a tribute that honours who they truly were.
               </p>
               <div className="complete-actions">
-                <button className="btn-view">View Your Memorial</button>
-                <button className="btn-new" onClick={resetInterview}>Begin Another Memorial</button>
+                <button className="btn-view" onClick={() => window.location.href = "/#/memorial"}>View Your Memorial</button>
               </div>
             </div>
           </div>
