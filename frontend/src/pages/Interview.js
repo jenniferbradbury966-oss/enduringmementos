@@ -9,9 +9,9 @@ const styles = `
     --dusty-rose: #C4917A;
     --rose-light: #E8C4B4;
     --sage: #8A9E8C;
-    --brown: #3C2F2F;
-    --brown-mid: #6B4F4F;
-    --gold: #A8935A;
+    --brown: #1a1a1a;
+    --brown-mid: #2c2c2c;
+    --gold: #8B6914;
     --gold-light: #D4B896;
   }
 
@@ -69,8 +69,8 @@ const styles = `
 
   .setup-desc {
     font-size: 0.88rem;
-    font-weight: 300;
-    color: var(--brown-mid);
+    font-weight: 400;
+    color: #2c2c2c;
     line-height: 1.8;
     margin-bottom: 36px;
   }
@@ -82,22 +82,22 @@ const styles = `
   .setup-field label {
     display: block;
     font-size: 0.72rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--brown-mid);
+    color: #1a1a1a;
     margin-bottom: 8px;
   }
 
   .setup-field input, .setup-field select {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid rgba(107,79,79,0.2);
+    border: 1px solid rgba(107,79,79,0.3);
     background: var(--warm-white);
     font-family: 'Jost', sans-serif;
     font-size: 0.92rem;
-    font-weight: 300;
-    color: var(--brown);
+    font-weight: 400;
+    color: #1a1a1a;
     outline: none;
     transition: border-color 0.2s;
     appearance: none;
@@ -108,7 +108,7 @@ const styles = `
   }
 
   .setup-field input::placeholder {
-    color: rgba(107,79,79,0.4);
+    color: rgba(60,47,47,0.45);
   }
 
   .btn-start {
@@ -137,6 +137,64 @@ const styles = `
     cursor: not-allowed;
   }
 
+  /* ── RESUME BANNER ── */
+  .resume-banner {
+    background: #FFF8F0;
+    border: 1px solid var(--rose-light);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+
+  .resume-banner p {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .resume-banner p strong {
+    color: var(--dusty-rose);
+  }
+
+  .resume-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-resume {
+    padding: 10px 20px;
+    background: var(--brown);
+    color: var(--cream);
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-resume:hover { background: var(--brown-mid); }
+
+  .btn-discard {
+    padding: 10px 20px;
+    background: transparent;
+    color: #555;
+    border: 1px solid rgba(107,79,79,0.25);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-discard:hover { border-color: var(--dusty-rose); color: var(--dusty-rose); }
+
   /* ── INTERVIEW SCREEN ── */
   .interview-screen {
     flex: 1;
@@ -156,7 +214,7 @@ const styles = `
 
   .interview-header .for-label {
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
@@ -252,25 +310,29 @@ const styles = `
     max-width: 78%;
     padding: 16px 20px;
     line-height: 1.75;
-    font-size: 0.92rem;
-    font-weight: 300;
+    font-size: 0.95rem;
+    font-weight: 400;
   }
 
   .msg-bubble.ai {
     background: white;
-    color: var(--brown);
+    color: #1a1a1a;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-style: italic;
+    font-weight: 400;
     box-shadow: 0 2px 12px rgba(60,47,47,0.06);
     border-left: 2px solid var(--rose-light);
   }
 
   .msg-bubble.user {
-    background: var(--brown);
-    color: var(--cream);
+    background: white;
+    color: #1a1a1a;
     font-style: normal;
     font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    box-shadow: 0 2px 12px rgba(60,47,47,0.06);
+    border-right: 2px solid var(--rose-light);
   }
 
   .typing-indicator {
@@ -315,8 +377,8 @@ const styles = `
     background: white;
     font-family: 'Jost', sans-serif;
     font-size: 0.92rem;
-    font-weight: 300;
-    color: var(--brown);
+    font-weight: 400;
+    color: #1a1a1a;
     outline: none;
     resize: none;
     min-height: 52px;
@@ -330,7 +392,7 @@ const styles = `
   }
 
   .input-box::placeholder {
-    color: rgba(107,79,79,0.35);
+    color: rgba(60,47,47,0.4);
   }
 
   .send-btn {
@@ -359,9 +421,9 @@ const styles = `
   }
 
   .input-hint {
-    font-size: 0.72rem;
-    font-weight: 300;
-    color: rgba(107,79,79,0.45);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #555555;
     margin-top: 8px;
     text-align: center;
     letter-spacing: 0.04em;
@@ -406,9 +468,9 @@ const styles = `
   }
 
   .complete-card p {
-    font-size: 0.88rem;
-    font-weight: 300;
-    color: var(--brown-mid);
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: #2c2c2c;
     line-height: 1.8;
     margin-bottom: 32px;
   }
@@ -463,7 +525,7 @@ const styles = `
     color: #721c24;
     padding: 12px 16px;
     font-size: 0.83rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 16px;
     border-radius: 2px;
   }
@@ -486,9 +548,10 @@ const styles = `
 
 const FLASK_URL = process.env.REACT_APP_API_URL || "";
 const QUESTION_COUNT_TARGET = 9;
+const SAVE_KEY = "enduring_mementos_progress";
 
 export default function Interview() {
-  const [screen, setScreen] = useState("setup"); // setup | interview | complete
+  const [screen, setScreen] = useState("setup");
   const [name, setName] = useState("");
   const [relationship, setRelationship] = useState("");
   const [messages, setMessages] = useState([]);
@@ -496,8 +559,41 @@ export default function Interview() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [questionCount, setQuestionCount] = useState(0);
+  const [savedProgress, setSavedProgress] = useState(null);
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+
+  // Check for saved progress on load
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(SAVE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.name && parsed.messages && parsed.messages.length > 0) {
+          setSavedProgress(parsed);
+        }
+      }
+    } catch (e) {
+      localStorage.removeItem(SAVE_KEY);
+    }
+  }, []);
+
+  // Auto-save progress whenever messages change
+  useEffect(() => {
+    if (messages.length > 0 && name) {
+      try {
+        localStorage.setItem(SAVE_KEY, JSON.stringify({
+          name,
+          relationship,
+          messages,
+          questionCount,
+          savedAt: new Date().toISOString(),
+        }));
+      } catch (e) {
+        console.warn("Could not save progress:", e);
+      }
+    }
+  }, [messages, name, relationship, questionCount]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -506,6 +602,21 @@ export default function Interview() {
   const autoResize = (e) => {
     e.target.style.height = "52px";
     e.target.style.height = Math.min(e.target.scrollHeight, 120) + "px";
+  };
+
+  const resumeInterview = () => {
+    if (!savedProgress) return;
+    setName(savedProgress.name);
+    setRelationship(savedProgress.relationship || "");
+    setMessages(savedProgress.messages);
+    setQuestionCount(savedProgress.questionCount || 0);
+    setSavedProgress(null);
+    setScreen("interview");
+  };
+
+  const discardSaved = () => {
+    localStorage.removeItem(SAVE_KEY);
+    setSavedProgress(null);
   };
 
   const callClaude = async (conversationMessages) => {
@@ -569,6 +680,7 @@ export default function Interview() {
       const newCount = questionCount + 1;
       setQuestionCount(newCount);
       if (newCount >= QUESTION_COUNT_TARGET) {
+        localStorage.removeItem(SAVE_KEY);
         setTimeout(() => setScreen("complete"), 1200);
       }
     } catch (e) {
@@ -587,6 +699,7 @@ export default function Interview() {
   };
 
   const resetInterview = () => {
+    localStorage.removeItem(SAVE_KEY);
     setScreen("setup");
     setName("");
     setRelationship("");
@@ -594,6 +707,13 @@ export default function Interview() {
     setInput("");
     setQuestionCount(0);
     setError(null);
+    setSavedProgress(null);
+  };
+
+  const formatSavedDate = (iso) => {
+    try {
+      return new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    } catch { return "recently"; }
   };
 
   const progress = Math.min((questionCount / QUESTION_COUNT_TARGET) * 100, 100);
@@ -612,8 +732,19 @@ export default function Interview() {
               <h1 className="setup-title">Tell us about<br /><em>who you loved</em></h1>
               <p className="setup-desc">
                 We'll guide you through a gentle conversation to capture their story.
-                This takes about 10–15 minutes and you can save your progress at any time.
+                This takes about 10–15 minutes and you can return to continue at any time.
               </p>
+
+              {/* Resume banner */}
+              {savedProgress && (
+                <div className="resume-banner">
+                  <p>You have an unfinished memorial for <strong>{savedProgress.name}</strong>, saved {formatSavedDate(savedProgress.savedAt)}. Would you like to continue where you left off?</p>
+                  <div className="resume-actions">
+                    <button className="btn-resume" onClick={resumeInterview}>Continue Memorial</button>
+                    <button className="btn-discard" onClick={discardSaved}>Start Fresh</button>
+                  </div>
+                </div>
+              )}
 
               {error && <div className="error-banner">{error}</div>}
 
@@ -709,7 +840,7 @@ export default function Interview() {
                   ➤
                 </button>
               </div>
-              <p className="input-hint">Press Enter to send · Shift+Enter for new line</p>
+              <p className="input-hint">Press Enter to send · Shift+Enter for new line · Your progress is saved automatically</p>
             </div>
           </div>
         )}
