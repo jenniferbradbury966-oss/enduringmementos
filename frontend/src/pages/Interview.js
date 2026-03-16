@@ -838,8 +838,13 @@ export default function Interview() {
     <button className="btn-view" onClick={() => {
       const completedMemorial = memorials.find(m => m.id === activeId);
       if (completedMemorial) {
-        localStorage.setItem("enduring_mementos_progress", JSON.stringify(completedMemorial));
-        saveToBackend(completedMemorial, "complete");
+        const finalMemorial = {
+          ...completedMemorial,
+          messages,
+          answeredCount,
+        };
+        localStorage.setItem("enduring_mementos_progress", JSON.stringify(finalMemorial));
+        saveToBackend(finalMemorial, "complete");
       }
       deleteMemorial(activeId);
       setMemorials(loadAllMemorials());
