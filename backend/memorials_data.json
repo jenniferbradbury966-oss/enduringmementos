@@ -1,0 +1,566 @@
+{
+  "mem_1773361883160_66gnq": {
+    "id": "mem_1773361883160_66gnq",
+    "user_id": "user_1773361886918_vvy7a",
+    "name": "Francis Florane",
+    "relationship": "parent",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Francis Florane. My relationship to them: parent. Please warmly welcome me, then ask: \"Tell me a bit about Francis Florane. What would you want someone who never met them to know?\"",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "What a meaningful thing to do \u2014 creating a memorial for Francis Florane is a beautiful way to honor their life and keep their memory alive. I'm glad you're here, and I'll take this gently, one step at a time, at whatever pace feels right for you.\n\nSo, to begin \u2014 **tell me a bit about Francis Florane. What would you want someone who never met them to know?**"
+      },
+      {
+        "role": "user",
+        "content": "Francis will be missed by so many. A frequent member of her church and the lions hall bingo club. She loved to bake and watch Wheel of Futune, hoping one day she would be a contestant or the next Vanna White."
+      },
+      {
+        "role": "assistant",
+        "content": "Francis sounds like such a vibrant, fun-loving soul \u2014 someone who brought warmth to her church, her bingo club, and everyone lucky enough to taste her baking, with a playful dream of one day standing beside Vanna White that must have made people smile.\n\n**Is there a smell that reminds you of Francis Florane? What memory does it bring back?**"
+      },
+      {
+        "role": "user",
+        "content": "The memory of enjoying life no matter the circumstance. Helping others was in her nature. She was also the first one to remind you not to throw your garbage on the floor."
+      },
+      {
+        "role": "assistant",
+        "content": "What a wonderful spirit Francis had \u2014 finding joy in every circumstance, lifting others up, and yes, making sure everyone kept things tidy along the way!\n\n**How would you describe Francis Florane in three words \u2014 and why those three?**"
+      },
+      {
+        "role": "user",
+        "content": "Sweet but short tempered, Courageous and Loyal"
+      },
+      {
+        "role": "assistant",
+        "content": "That's such an honest and loving portrait \u2014 sweet but with a little fire, courageous, and loyal to the end, the kind of person you always knew exactly where you stood with.\n\n**What did Francis Florane's hands look like? What did they do with them?**"
+      },
+      {
+        "role": "user",
+        "content": "She enjoyed painting and gardening. Her favorite flower was Hydrangeas"
+      },
+      {
+        "role": "assistant",
+        "content": "Hands that coaxed beautiful hydrangeas from the earth and brought color to canvas \u2014 Francis had a way of creating beauty wherever she went.\n\n**What's a story about Francis Florane that you've told more than once?**"
+      },
+      {
+        "role": "user",
+        "content": "Skipped",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "What made Francis Florane special to you?"
+      },
+      {
+        "role": "user",
+        "content": "How she could talk to anyone, about anything"
+      },
+      {
+        "role": "assistant",
+        "content": "That gift of truly connecting with anyone she met is so rare and so precious \u2014 it's easy to see why so many people will miss her.\n\n**What do you think Francis Florane would want people to remember most about her?**"
+      },
+      {
+        "role": "user",
+        "content": "To enjoy life and be strong in the endeavour's you pursue"
+      },
+      {
+        "role": "assistant",
+        "content": "That sounds just like her \u2014 someone who lived that philosophy every day, from her bingo club to her garden to her church community.\n\n**What's the first memory that comes to mind when you think of Francis Florane?**"
+      },
+      {
+        "role": "user",
+        "content": "Trying to show off her moves on the ski hill and ended up in the snow"
+      },
+      {
+        "role": "assistant",
+        "content": "That image of Francis going for it on the ski hill, full of courage and ending up in the snow, is absolutely priceless \u2014 it captures that sweet, spirited side of her perfectly!\n\n**Tell me about a time when Francis Florane made you laugh.**"
+      },
+      {
+        "role": "user",
+        "content": "We all laughed that day! Maybe a little too hard, I think her pride and feelings were a little bruised"
+      },
+      {
+        "role": "assistant",
+        "content": "That shared laughter on the ski hill \u2014 even at her expense \u2014 sounds like the kind of memory that becomes a family treasure, and something tells me Francis probably laughed about it too, eventually!\n\n**What was Francis Florane's favourite place to be? Can you describe it?**"
+      },
+      {
+        "role": "user",
+        "content": "Hiking on a tall mountain or long trail ride was one of her favorite places to be. Outside in the fresh air!!"
+      },
+      {
+        "role": "assistant",
+        "content": "What a beautiful picture of Francis Florane \u2014 a woman most at home with the wind in her hair, fresh air in her lungs, and the world stretched out before her. It fits perfectly with everything you've shared \u2014 her courage, her love of life, her spirit that couldn't be contained.\n\nThank you so much for taking this time to share Francis Florane with me. Through your words, I can see a woman who was truly one of a kind \u2014 a loyal, spirited soul who baked with love, cheered at bingo, dreamed of Vanna White, painted, gardened, hit the ski hills, and reminded everyone around her to enjoy life and pursue it boldly. She connected with everyone she met, and it's clear she left a mark on every single one of them.\n\nThe love you have for her shines through every word you've shared today, and that love is exactly what will keep her memory alive and close.\n\n*Francis Florane sounds like someone the world was truly lucky to have in it.* \ud83c\udf38"
+      }
+    ],
+    "used_ids": [
+      "open_01",
+      "sense_02",
+      "open_03",
+      "sense_05",
+      "story_02",
+      "open_04",
+      "requeue_1773362318464",
+      "open_02",
+      "story_01",
+      "sense_03"
+    ],
+    "answered_count": 8,
+    "last_category": "sensory",
+    "tribute_text": "Francis Florane was a woman who carried warmth and vitality into every room she entered, leaving no one untouched by her presence. A devoted member of her church and a cherished regular at the Lions Hall bingo club, she wove herself into the fabric of her community with a loyalty that never wavered. She could talk to anyone about anything \u2014 a rare and beautiful gift \u2014 and those who knew her understood that in Francis, they had found someone genuine, someone who showed up fully and stayed. Sweet by nature but with a spirit that had fire in it, she was the kind of person you always knew exactly where you stood with, and that honesty was its own form of love.\n\nHer hands were never idle, and they were never far from something beautiful. She painted, she gardened, and she tended her beloved hydrangeas with the same quiet devotion she gave to everything she cared for. She baked for the people around her, watched Wheel of Fortune with a twinkle in her eye, and harbored the delightful dream of one day being a contestant or perhaps the next Vanna White \u2014 a dream that surely made everyone who heard it smile. There was also the unforgettable day on the ski hill, when Francis went for it with full courage and ended up in the snow, her pride a little bruised while everyone around her laughed perhaps a little too hard. It was a moment that captured her perfectly: bold, spirited, and entirely herself.\n\nFrancis found her truest peace outdoors, high on a mountain trail with fresh air filling her lungs and the wide world stretched before her, and it is easy to imagine her there still \u2014 courageous and free. She lived by the belief that life was meant to be enjoyed and that every endeavour was worth pursuing with strength, and she did not merely preach this philosophy but embodied it in all she did. She helped others instinctively, she found joy in the most ordinary of circumstances, and she reminded those around her \u2014 gently or not so gently \u2014 to take care of the world they shared. Francis Florane was one of a kind, and the love she gave so freely will continue to bloom long after her, like the hydrangeas she so tenderly grew.",
+    "status": "complete",
+    "photos": [],
+    "created_at": "2026-03-13T00:31:27.676244",
+    "updated_at": "2026-03-13T00:45:12.441813"
+  },
+  "mem_1773371692994_4ejwg": {
+    "id": "mem_1773371692994_4ejwg",
+    "user_id": "user_1773371696098_gbqsb",
+    "name": "Roy Rde",
+    "relationship": "other loved one",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Roy Rde. My relationship to them: other loved one. Please warmly welcome me, then ask: \"Tell me a bit about Roy Rde. What would you want someone who never met them to know?\"",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "What a meaningful thing to do \u2014 creating a memorial for Roy Rde is a beautiful way to honor who they were and keep their memory alive. I'm glad you're here, and we'll take this gently, at whatever pace feels right for you.\n\nTo start: **Tell me a bit about Roy Rde. What would you want someone who never met them to know?**"
+      },
+      {
+        "role": "user",
+        "content": "He was a jolly old soul"
+      },
+      {
+        "role": "assistant",
+        "content": "A jolly old soul \u2014 what a wonderful way to carry someone in your heart, and what a gift that energy must have been to everyone around him.\n\nIs there a smell that reminds you of Roy Rde? What memory does it bring back?"
+      },
+      {
+        "role": "user",
+        "content": "He use to dress up for the kids at Christmas time and play Santa. Oh, he enjoyed that so very much"
+      },
+      {
+        "role": "assistant",
+        "content": "That image of him dressed as Santa, lighting up the faces of the children \u2014 you can just feel the joy he brought to those moments, and the joy it gave him in return.\n\nTell me about a time when Roy Rde made you laugh."
+      },
+      {
+        "role": "user",
+        "content": "He use to laugh at some of the things the kids said they wanted for Christmas. He would tell me and we would laugh together how sweet and innocent they are."
+      },
+      {
+        "role": "assistant",
+        "content": "Those quiet moments between the two of you, sharing the sweetness of the children's wishes \u2014 that sounds like such a tender and special connection you had.\n\nWhat did Roy Rde's laugh sound like? What made him laugh hardest?"
+      },
+      {
+        "role": "user",
+        "content": "Roy really laughed loud and hard when he got tickeled."
+      },
+      {
+        "role": "assistant",
+        "content": "That loud, full-body laugh when something really tickled him \u2014 you can almost hear it just imagining it, what a beautiful sound that must have been.\n\nWhat made Roy Rde special to you?"
+      },
+      {
+        "role": "user",
+        "content": "He would always take us on hikes to explore different areas and on scavenger hunts to find things. Even if it was a leaf that we made a craft out of. It was always a great memory"
+      },
+      {
+        "role": "assistant",
+        "content": "Those adventures he created \u2014 turning something as simple as a leaf into a memory and a craft \u2014 show just how much he made the ordinary feel magical.\n\nWhat's a story about Roy Rde that you've told more than once?"
+      },
+      {
+        "role": "user",
+        "content": "Skipped",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "What was Roy Rde's favourite place to be? Can you describe it?"
+      },
+      {
+        "role": "user",
+        "content": "His favorite place to be was sleeping. He really loved his sleep and no one better wake him up."
+      },
+      {
+        "role": "assistant",
+        "content": "Ha \u2014 a man who knew the value of a good rest, and made sure everyone knew not to disturb it! That sounds like it became a rule everyone in the family learned quickly.\n\nWhat did Roy Rde love most in life, beyond his sleep?"
+      },
+      {
+        "role": "user",
+        "content": "He loved chocolate and action movies"
+      },
+      {
+        "role": "assistant",
+        "content": "A man of great taste \u2014 chocolate and action movies sounds like the perfect combination for a cozy night in.\n\nWhat did Roy Rde's hands look like? What did they do with them?"
+      },
+      {
+        "role": "user",
+        "content": "As little as possible. He preferred telling everyone what to do - leading the pack \"so to speak\""
+      },
+      {
+        "role": "assistant",
+        "content": "Ha! A natural leader who knew how to delegate \u2014 sounds like he had a gift for directing the show while everyone else did the work!\n\nHow would you describe Roy Rde in three words \u2014 and why those three?"
+      },
+      {
+        "role": "user",
+        "content": "Proud, Strong and Always hungry"
+      },
+      {
+        "role": "assistant",
+        "content": "Proud, strong, and always hungry \u2014 three words that paint such a vivid and lovable picture of who Roy Rde truly was.\n\n---\n\nThank you so much for sharing Roy Rde with me today. What a man he was \u2014 the jolly Santa who lit up children's faces, the adventurer who turned a simple leaf into a lasting memory, the leader who directed the show with pride and strength, and the man whose loud, full laugh filled every room he was in. A lover of chocolate, action movies, and his sleep \u2014 and someone who clearly brought so much warmth and joy to everyone lucky enough to know him.\n\nThe memories you've shared today are a testament to a life well and fully lived. Roy Rde sounds like someone who made ordinary moments feel extraordinary, and it's clear how deeply loved he was \u2014 and still is.\n\nTake good care of yourself, and know that the memories you carry of him are one of the most beautiful ways he lives on. \ud83d\udc9b"
+      }
+    ],
+    "used_ids": [
+      "open_01",
+      "sense_02",
+      "story_01",
+      "sense_01",
+      "open_04",
+      "story_02",
+      "sense_03",
+      "requeue_1773371986215",
+      "sense_05",
+      "open_03"
+    ],
+    "answered_count": 8,
+    "last_category": "opening",
+    "tribute_text": "Roy Rde was, by every measure, a jolly old soul \u2014 a man whose warmth filled every room he entered and whose spirit made the world feel a little more alive. He was proud and strong, a natural leader who had a gift for directing the show while those around him gladly followed his lead. And if you knew Roy, you knew two things for certain: he had a deep love for chocolate and action movies, and you did not disturb his sleep.\n\nEvery Christmas, Roy became someone truly magical \u2014 dressing up as Santa and pouring himself wholly into the joy of the children gathered around him. He relished those moments deeply, and afterward, he and his loved one would share quiet laughs together over the sweet and innocent wishes the children had made, marveling at the purity of it all. He had a way of turning the simplest things into something extraordinary \u2014 leading hikes through new places, organizing scavenger hunts, and finding wonder in something as small as a leaf that could be carried home and made into a craft. These were not grand gestures, but in Roy's hands, they became lasting memories that his family will carry for the rest of their lives.\n\nWhat those who loved him will never forget is his laugh \u2014 loud, full, and completely unrestrained when something truly tickled him, the kind of laugh that filled a room and invited everyone in it to laugh right along with him. Roy Rde was always hungry, always proud, and always present in the ways that mattered most. He leaves behind a legacy not of grand monuments, but of shared adventures, tender moments, and the enduring echo of that magnificent laugh.",
+    "status": "complete",
+    "photos": [],
+    "created_at": "2026-03-13T03:14:56.872466",
+    "updated_at": "2026-03-13T03:22:29.261595"
+  },
+  "mem_1773633877606_44i9x": {
+    "id": "mem_1773633877606_44i9x",
+    "user_id": "user_1773633880142_whpk0",
+    "name": "Tom Hardigan",
+    "relationship": "grandchild",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Tom Hardigan. My relationship to them: grandchild. Please warmly welcome me, then ask: \"Tell me a bit about Tom Hardigan. What would you want someone who never met them to know?\"",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "What a beautiful thing you're doing \u2014 creating a memorial for Tom is such a meaningful way to honor who they were. Take all the time you need here; there's no rush.\n\nTo start: **Tell me a bit about Tom Hardigan. What would you want someone who never met them to know?**"
+      },
+      {
+        "role": "user",
+        "content": "there were very smart, sweet and funny"
+      },
+      {
+        "role": "assistant",
+        "content": "Smart, sweet, and funny \u2014 what a wonderful combination; Tom sounds like someone who could light up any room they walked into.\n\nIs there a smell that reminds you of Tom Hardigan? What memory does it bring back?"
+      },
+      {
+        "role": "user",
+        "content": "Eating, laughing and playing in the sand"
+      },
+      {
+        "role": "assistant",
+        "content": "Those are such vivid, joyful images \u2014 Tom eating, laughing, and playing in the sand sounds like pure happiness.\n\nTell me about a time when Tom Hardigan made you laugh."
+      },
+      {
+        "role": "user",
+        "content": "chasing the birds at the beach"
+      },
+      {
+        "role": "assistant",
+        "content": "That image of Tom chasing the birds at the beach is absolutely precious \u2014 you can almost hear the laughter and the seagulls!\n\nWhat made Tom Hardigan special to you?"
+      },
+      {
+        "role": "user",
+        "content": "The comments they made"
+      },
+      {
+        "role": "assistant",
+        "content": "Those little comments Tom made clearly had a way of staying with you \u2014 the things children say can be so unexpectedly wise or funny or just perfectly *them*.\n\nIf you close your eyes right now, what do you see Tom Hardigan doing?"
+      },
+      {
+        "role": "user",
+        "content": "Standing on a mountain yelling Im the King of the Castle"
+      },
+      {
+        "role": "assistant",
+        "content": "Oh, that image of Tom standing on that mountain, arms wide, declaring themselves King of the Castle \u2014 that is pure Tom, and what a magnificent picture that paints.\n\nHow would you describe Tom Hardigan in three words \u2014 and why those three?"
+      },
+      {
+        "role": "user",
+        "content": "Adventurous, likes to try new things. Funny, they laughed at things others found boring and made them funny. Bringing everyone in the group together."
+      },
+      {
+        "role": "assistant",
+        "content": "Adventurous, funny, and a natural connector \u2014 Tom had this rare gift of finding joy everywhere and bringing everyone along for the ride.\n\nWhat was Tom Hardigan's favourite place to be? Can you describe it?"
+      },
+      {
+        "role": "user",
+        "content": "In the water, on the beach or watching the boat races"
+      },
+      {
+        "role": "assistant",
+        "content": "Tom clearly had such a deep love for the water and all the life and excitement that came with it \u2014 the beach, the waves, the thrill of the boat races all sound so perfectly *Tom*.\n\nWhat's a story about Tom Hardigan that you've told more than once?"
+      },
+      {
+        "role": "user",
+        "content": "Skipped",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "What did Tom Hardigan's laugh sound like? What made them laugh hardest?"
+      },
+      {
+        "role": "user",
+        "content": "Skipped",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "Tell me about an ordinary day with Tom Hardigan \u2014 one that felt perfectly normal at the time."
+      },
+      {
+        "role": "user",
+        "content": "Skipped",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "What's the first memory that comes to mind when you think of Tom Hardigan?"
+      },
+      {
+        "role": "user",
+        "content": "Making pretend, they had a great imagination"
+      },
+      {
+        "role": "assistant",
+        "content": "A great imagination is such a gift \u2014 Tom could turn any ordinary moment into its own little world, and that's something truly special.\n\nIs there something you want people to always remember about Tom Hardigan?"
+      },
+      {
+        "role": "user",
+        "content": "How much they loved the tribe and would do anything for them"
+      },
+      {
+        "role": "assistant",
+        "content": "That says everything \u2014 Tom's love for their tribe wasn't just words, it was something they lived and showed every single day. What a beautiful legacy to carry forward.\n\n---\n\nThank you so much for sharing Tom with me today. It takes real love and real courage to sit with these memories and put them into words. \n\nWhat shines through everything you've shared is a child who was fully, joyfully *alive* \u2014 chasing birds on the beach, standing on mountains like a king, making the ordinary world funnier and more magical just by being in it. Tom loved their people fiercely, and it's clear that love goes both ways.\n\nThis memorial will carry Tom's spirit forward \u2014 adventurous, funny, and always bringing everyone together.\n\n*Tom Hardigan sounds like someone the world was lucky to have, even for the time they were here.*"
+      }
+    ],
+    "used_ids": [
+      "open_01",
+      "sense_02",
+      "story_01",
+      "open_04",
+      "sense_04",
+      "open_03",
+      "sense_03",
+      "story_02",
+      "sense_01",
+      "story_04",
+      "open_02",
+      "requeue_1773634111973",
+      "close_01"
+    ],
+    "answered_count": 9,
+    "last_category": "closing",
+    "tribute_text": "Tom Hardigan was the kind of person who made the world feel bigger, brighter, and full of possibility. Smart, sweet, and funny in equal measure, Tom had a rare gift for finding joy in the most ordinary of moments \u2014 and an even rarer gift for making sure everyone around them found it too. Whether it was a perfectly timed comment that left people in stitches or a boundless imagination that could turn any afternoon into an adventure, Tom had a way of making life feel like it was worth paying close attention to.\n\nThe water was Tom's natural home \u2014 the beach, the waves, the electric excitement of watching the boat races from the shore. It was there, with sand underfoot and laughter in the air, that Tom seemed most fully and joyfully alive. There is an image that captures it perfectly: Tom scrambling up whatever high ground could be found and declaring, arms wide and voice carrying across the wind, *I'm the King of the Castle* \u2014 adventurous, triumphant, and utterly, wonderfully themselves. Tom laughed at things others walked right past, and in doing so, made those things funny for everyone.\n\nWhat those who loved Tom will carry longest is not any single story, but the feeling of being in Tom's orbit \u2014 of being part of the tribe that Tom cherished so deeply and so completely. Tom's love for their people was not quiet or reserved; it was something lived out loud, through presence and play and the kind of loyalty that asks nothing in return. To have been loved by Tom Hardigan was a gift, and the laughter, the sand, the wild declarations from the top of mountains \u2014 all of it lives on in the hearts of the people Tom brought together and refused to let go.",
+    "status": "complete",
+    "photos": [],
+    "created_at": "2026-03-16T04:04:40.640128",
+    "updated_at": "2026-03-16T04:17:29.225694"
+  },
+  "mem_1773636070467_tof7p": {
+    "id": "mem_1773636070467_tof7p",
+    "user_id": "user_1773633880142_whpk0",
+    "name": "Franky Fure",
+    "relationship": "sibling",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Franky Fure. My relationship to them: sibling. Please warmly welcome me, then ask: \"Tell me a bit about Franky Fure. What would you want someone who never met them to know?\"",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "What a beautiful thing you're doing \u2014 creating a memorial for Franky Fure is such a meaningful way to honor them and keep their memory alive. I'm so glad you're here, and I'll be with you every step of the way.\n\nTo start us off: **Tell me a bit about Franky Fure. What would you want someone who never met them to know?**"
+      },
+      {
+        "role": "user",
+        "content": "How wonderful there smile was and how much they will be cherished"
+      },
+      {
+        "role": "assistant",
+        "content": "That smile sounds like it could light up a room \u2014 and the love you have for Franky Fure comes through so clearly in every word.\n\nIf you close your eyes right now, what do you see Franky Fure doing?"
+      },
+      {
+        "role": "user",
+        "content": "Taking his private plan to fish in spots not highly fished in"
+      },
+      {
+        "role": "assistant",
+        "content": "What an incredible image \u2014 Franky Fure flying his own plane to those hidden, untouched fishing spots speaks to someone who truly lived life on his own terms.\n\nHow would you describe Franky Fure in three words \u2014 and why those three?"
+      },
+      {
+        "role": "user",
+        "content": "Funny, strong and brave"
+      },
+      {
+        "role": "assistant",
+        "content": "Funny, strong, and brave \u2014 those three words paint such a vivid picture of who Franky Fure was, and they feel so perfectly him given everything you've shared.\n\nWhat did Franky Fure's laugh sound like? What made them laugh hardest?"
+      },
+      {
+        "role": "user",
+        "content": "They were so silly they laughed at everything, especially there own jokes that were not that funny"
+      },
+      {
+        "role": "assistant",
+        "content": "That is such a treasure \u2014 laughing hardest at your own jokes that aren't even that funny is the most endearing kind of silly, and I can just picture it.\n\nCan you tell me about a moment between the two of you that you find yourself coming back to?"
+      },
+      {
+        "role": "user",
+        "content": "Going skiing and that one time we tried dog sledding in Alaska"
+      },
+      {
+        "role": "assistant",
+        "content": "Oh, those adventures together sound absolutely magical \u2014 skiing and dog sledding in Alaska with Franky Fure, what a pair you two must have been.\n\nWhat was Franky Fure like on those trips \u2014 did that funny, brave side of him really come out?"
+      },
+      {
+        "role": "user",
+        "content": "oh yes, always up for a new adventure"
+      },
+      {
+        "role": "assistant",
+        "content": "Always up for a new adventure \u2014 that says so much about who Franky Fure was, someone who embraced life fully and brought you along for the ride.\n\nHow do you feel Franky Fure has shaped who you are today?"
+      },
+      {
+        "role": "user",
+        "content": "Reading and following the rules of the game"
+      },
+      {
+        "role": "assistant",
+        "content": "That's such a meaningful thing to carry forward \u2014 living with integrity and playing by the rules, a quiet but powerful part of Franky Fure that lives on in you now.\n\nAs we're nearing the end of our time together, I want to ask: **what do you most want people to remember about Franky Fure?**"
+      },
+      {
+        "role": "user",
+        "content": "I'd like to skip this one.",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "Of course \u2014 there's no need to go anywhere that doesn't feel right, and I'm grateful for everything you've shared so far.\n\nAs we come to our final question: what do you hope this memorial gives to the people who loved Franky Fure?"
+      },
+      {
+        "role": "user",
+        "content": "A reminder to laugh, have fun and enjoy life. No one is invisible"
+      },
+      {
+        "role": "assistant",
+        "content": "What a beautiful and profound gift to leave \u2014 a reminder to laugh, embrace joy, and truly see one another. Franky Fure clearly lived that, and now that spirit will live on through this memorial.\n\nThank you so much for sharing Franky Fure with me today \u2014 his smile, his silly jokes, his private plane fishing adventures, the dog sledding in Alaska, and that beautiful lesson about living with integrity. It has been a true honor to hear about him, and the love you have for your brother is felt in every single word."
+      }
+    ],
+    "used_ids": [
+      "open_01",
+      "sense_04",
+      "open_03",
+      "sense_01"
+    ],
+    "answered_count": 8,
+    "last_category": "sensory",
+    "tribute_text": "Franky Fure was the kind of person whose smile you never forgot \u2014 warm, radiant, and entirely his own. Those who knew him will tell you that smile could fill a room, and that the love surrounding him was every bit as bright. He moved through the world with a rare combination of humor, strength, and bravery, a man who seemed to carry lightness wherever he went and courage in everything he did. To know Franky was to be in the presence of someone who made life feel bigger and more alive.\n\nHe lived on his own terms, and he lived beautifully. Franky would pilot his own plane to remote, untouched fishing spots, seeking out the quiet corners of the world that most people never find. He was always up for a new adventure, whether that meant carving down a snowy mountain or gripping the reins of a dog sled across the wild landscapes of Alaska. And through all of it, he laughed \u2014 easily, freely, and most joyfully at his own jokes, even the ones that weren't quite as funny as he believed them to be. That silliness was not a small thing; it was a gift.\n\nFranky also lived with integrity, playing by the rules of the game and passing that quiet strength on to those who loved him most. His sibling carries that lesson forward today, along with every shared memory and every moment of laughter. The greatest tribute to Franky Fure is the one he would have wanted most \u2014 to laugh, to have fun, to truly enjoy this life, and to truly see one another. No one is invisible, and neither is the love that remains.",
+    "status": "complete",
+    "photos": [],
+    "created_at": "2026-03-16T04:41:13.512308",
+    "updated_at": "2026-03-16T05:19:09.863330"
+  },
+  "mem_1773639229778_p3von": {
+    "id": "mem_1773639229778_p3von",
+    "user_id": "user_1773633880142_whpk0",
+    "name": "Hannah Banana",
+    "relationship": "sibling",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Hannah Banana. My relationship to them: sibling. Please warmly welcome me and ask your first gentle question to begin.",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "Welcome \u2014 and what a beautiful thing you're doing, creating something lasting for Hannah Banana. This is a space to take your time, go at your own pace, and tell their story entirely in your own words.\n\nTo start gently \u2014 **what was Hannah Banana like?** Even just a word or two, whatever comes to mind first."
+      },
+      {
+        "role": "user",
+        "content": "Hannah was quite and shy most of the time"
+      },
+      {
+        "role": "assistant",
+        "content": "That quietness and shyness feels like it was really a part of who she was. \n\nDid that shyness ever surprise people \u2014 were there moments when a different side of Hannah Banana came out?"
+      },
+      {
+        "role": "user",
+        "content": "When she was with her friends you would never know that about her."
+      },
+      {
+        "role": "assistant",
+        "content": "That's such a lovely thing \u2014 like her friends got to see a whole other Hannah Banana that most people didn't even know existed.\n\nWhat was she like when she was with those friends \u2014 what would you notice about her in those moments?"
+      },
+      {
+        "role": "user",
+        "content": "She had her own style, no one understood but her. She liked it, she loved it and she rocked it."
+      },
+      {
+        "role": "assistant",
+        "content": "That is so Hannah Banana \u2014 quietly confident in exactly who she was, not needing anyone else's approval for it.\n\nWhat did her style look like? I'd love to picture it."
+      },
+      {
+        "role": "user",
+        "content": "Artsy/creative with bolder colors or prints, interesting textures, statement accessories (scarves, jewelry, shoes) layered over basics. She always wore her hair in a bun like a ballerina"
+      },
+      {
+        "role": "assistant",
+        "content": "What a vivid picture \u2014 the bold colors and layers, the statement pieces, and then that ballerina bun tying it all together. She sounds like someone who expressed herself so beautifully through what she wore.\n\nYou mentioned she was artsy and creative \u2014 did that creativity show up in other parts of her life too, beyond how she dressed?"
+      },
+      {
+        "role": "user",
+        "content": "She like collecting inspiration  photos, going to art galleries, and creating mood boards"
+      },
+      {
+        "role": "assistant",
+        "content": "She was someone who was always gathering beauty around her \u2014 noticing it, saving it, arranging it. There's something so tender about that.\n\nWhat kinds of things would make it onto her mood boards \u2014 was there a theme or a feeling she kept coming back to?"
+      },
+      {
+        "role": "user",
+        "content": "There was a lot of random things on her mood boards - fancy cars, visual art, music instruments and songs lyrics"
+      },
+      {
+        "role": "assistant",
+        "content": "That mix says so much about her \u2014 someone with a wide, curious inner world, drawn to beauty in all kinds of unexpected places.\n\nYou've painted such a rich picture of Hannah Banana's creativity and style. I'd love to hear about the two of you \u2014 what was your relationship like with her?"
+      },
+      {
+        "role": "user",
+        "content": "We were the best together - complete harmony"
+      },
+      {
+        "role": "assistant",
+        "content": "\"Complete harmony\" \u2014 what a perfect way to describe it. That kind of bond between siblings is truly something rare and special.\n\nAs we're nearing the end of our time together, I want to ask something a little deeper \u2014 how has Hannah Banana shaped who you are today?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, I looked up to her for some many things like her creativity and individuality, she looked up to me for my smart and witty ways."
+      },
+      {
+        "role": "assistant",
+        "content": "That balance between you is so beautiful \u2014 you each had something the other admired, and together you made each other more whole.\n\nAs a final reflection \u2014 **what is the one thing you most want people to know and remember about Hannah Banana?** Whatever feels most important, most true to who she was."
+      }
+    ],
+    "used_ids": [],
+    "answered_count": 8,
+    "last_category": null,
+    "tribute_text": "Hannah Banana moved through the world quietly, carrying a gentle shyness that was simply part of her nature \u2014 until the right people were around her, and then something else entirely bloomed. With her closest friends, she became luminous and free, a version of herself that most people never had the privilege of knowing. She was someone whose inner world ran deep and wide, a collector of beauty in all its forms \u2014 wandering through art galleries, saving inspiration photos, and arranging mood boards that held everything from fancy cars to musical instruments to song lyrics she loved, a glorious and wholly her gathering of the things that moved her.\n\nHer creativity poured most visibly into the way she dressed, and what a sight she was. Bold colors and rich prints, layered over basics with interesting textures, statement scarves and jewelry and shoes that spoke before she ever had to \u2014 and always, always, her hair swept up in a ballerina bun that gave her the air of someone who had already decided who she was and needed no one's agreement. Her style was entirely her own, not always understood by others, and she didn't need it to be. She liked it, she loved it, and she wore it with a quiet confidence that was its own kind of grace.\n\nHer sibling knew her best, and theirs was a bond of complete harmony \u2014 a rare and tender thing, where each lifted the other. Hannah looked up to the sharp wit and intelligence her sibling carried, while she herself was admired for her boundless creativity and her steadfast individuality. What the world should know and remember about Hannah Banana is this: she was a person who lived honestly and beautifully as herself, gathering loveliness wherever she found it, and leaving those who loved her forever shaped by her light.",
+    "status": "complete",
+    "photos": [],
+    "created_at": "2026-03-16T05:33:53.718615",
+    "updated_at": "2026-03-16T05:44:15.477447"
+  }
+}

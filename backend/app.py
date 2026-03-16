@@ -1,58 +1,112 @@
+"""
+Enduring Mementos — Flask Backend
+──────────────────────────────────
+Storage: JSON file (no database needed yet)
+Photos:  Coming soon (S3 not configured yet)
+
+Routes:
+  POST /api/interview              — Claude interview conversation
+  POST /api/tribute                — Generate tribute from conversation
+  POST /api/memorials              — Save / update a memorial
+  GET  /api/memorials/user/<uid>   — Load all memorials for a user
+  DELETE /api/memorials/<id>       — Delete a memorial
+  GET  /api/health                 — Health check
+"""
+
 from flask import Flask, request, jsonify
 from anthropic import Anthropic
 from dotenv import load_dotenv
-import os
+from flask_cors import CORS
+import os, json, uuid
+from datetime import datetime
+from pathlib import Path
+import boto3
+from botocore.exceptions import ClientError
 
 load_dotenv()
 
-app = Flask(__name__)
+app    = Flask(__name__)
+CORS(app, 
+     origins="*",
+     allow_headers=["Content-Type", "Authorization"],
+     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+     supports_credentials=False)
 client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-SYSTEM_PROMPT = """You are a compassionate memorial interviewer for Enduring Mementos, a service that helps people create lasting tributes for their loved ones who have passed away.
+STORAGE_FILE = Path(__file__).parent / "memorials_data.json"
 
-Your role is to gently guide the user through a memorial interview, drawing out meaningful memories, personality details, stories, and the essence of their loved one.
+# ── S3 Client ──
+s3_client = boto3.client(
+    "s3",
+    region_name=os.getenv("AWS_S3_REGION", "ca-central-1"),
+    aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+    aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
+)
+S3_BUCKET = os.getenv("AWS_S3_BUCKET", "enduring-mementos-photos-2026")
 
-Guidelines:
-- Be warm, gentle, and unhurried. This person is grieving.
-- Ask one thoughtful question at a time.
-- Keep responses to 1-3 sentences max.
-- Never use clinical language. Speak as a warm, caring friend.
-- Do not invent anything. Only reflect back what the user shares."""
+def load_storage():
+    try:
+        if STORAGE_FILE.exists():
+            return json.loads(STORAGE_FILE.read_text())
+    except Exception:
+        pass
+    return {}
 
-TRIBUTE_SYSTEM_PROMPT = """You are a compassionate writer creating a memorial tribute for a family who has lost a loved one.
+def save_storage(data):
+    try:
+        STORAGE_FILE.write_text(json.dumps(data, indent=2))
+    except Exception as e:
+        print(f"Storage save failed: {e}")
 
-Based on the interview conversation provided, write a beautiful, warm, flowing tribute in third person (e.g. "Margaret was...").
+def build_interview_system_prompt(name, relationship):
+    return f"""You are a compassionate, unhurried guide helping someone create a memorial for {name}, their {relationship}.
 
+YOUR ROLE:
+- Help them tell {name}'s story in their own words
+- Ask one question at a time — never stack multiple questions
+- Acknowledge what they share before moving to the next question
+- Celebrate their memories warmly
+- Read the room: if answers are short, stay gentle and don't push deeper
+- Always offer permission to skip anything that feels too hard
+
+EMOTIONAL GUIDANCE:
+- Move at their pace — grief has no timeline
+- Never imply they should feel differently than they do
+- Never ask about how {name} died unless the user brings it up
+
+TONE: Warm, gentle, unhurried, celebratory of who {name} was.
+
+FORMAT:
+- Keep responses concise: acknowledge (1-2 sentences) + ask the next question
+- Never ask more than one question per message"""
+
+TRIBUTE_SYSTEM_PROMPT = """You are a compassionate writer creating a memorial tribute.
+Based on the interview conversation, write a beautiful warm flowing tribute in third person.
 Guidelines:
 - Write 3 paragraphs, each 3-5 sentences
 - Use the person's name throughout
-- Draw only from what was shared in the conversation — never invent details
-- Write in a warm, literary tone — like a eulogy written by someone who truly knew them
-- Focus on who they were as a person: their character, their love, their impact
-- End with something that captures their enduring presence in the family's hearts
-- Do NOT include headings, bullet points, or any formatting — pure flowing prose only"""
+- Draw only from what was shared — never invent details
+- Warm literary tone like a eulogy written by someone who truly knew them
+- No headings, bullet points, or formatting — pure flowing prose only"""
 
-@app.after_request
-def add_cors(response):
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    return response
 
 @app.route("/api/interview", methods=["POST", "OPTIONS"])
 def interview():
     if request.method == "OPTIONS":
         return jsonify({}), 200
-    data = request.get_json()
-    messages = data.get("messages", [])
+    data         = request.get_json()
+    messages     = data.get("messages", [])
+    name         = data.get("name", "them")
+    relationship = data.get("relationship", "loved one")
+    system       = data.get("system") or build_interview_system_prompt(name, relationship)
     if not messages:
         return jsonify({"error": "No messages provided"}), 400
     try:
         response = client.messages.create(
             model="claude-sonnet-4-6",
             max_tokens=1000,
-            system=SYSTEM_PROMPT,
-            messages=messages
+            system=system,
+            messages=messages,
         )
         return jsonify({"reply": response.content[0].text})
     except Exception as e:
@@ -62,8 +116,8 @@ def interview():
 def tribute():
     if request.method == "OPTIONS":
         return jsonify({}), 200
-    data = request.get_json()
-    name = data.get("name", "")
+    data         = request.get_json()
+    name         = data.get("name", "")
     relationship = data.get("relationship", "loved one")
     conversation = data.get("conversation", "")
     if not name or not conversation:
@@ -73,19 +127,137 @@ def tribute():
             model="claude-sonnet-4-6",
             max_tokens=1000,
             system=TRIBUTE_SYSTEM_PROMPT,
-            messages=[{
-                "role": "user",
-                "content": f"Please write a memorial tribute for {name}, based on this interview conversation with their {relationship}:\n\n{conversation}"
-            }]
+            messages=[{"role": "user", "content": f"Write a memorial tribute for {name}, based on this interview with their {relationship}:\n\n{conversation}"}]
         )
         return jsonify({"tribute": response.content[0].text})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/health", methods=["GET"])
+@app.route("/api/memorials", methods=["POST", "OPTIONS"])
+def save_memorial():
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+    data    = request.get_json()
+    storage = load_storage()
+    memorial_id = data.get("id") or str(uuid.uuid4())
+    user_id     = data.get("user_id", "default")
+    existing    = storage.get(memorial_id, {})
+    memorial = {
+        **existing,
+        "id":             memorial_id,
+        "user_id":        user_id,
+        "name":           data.get("name",           existing.get("name", "")),
+        "relationship":   data.get("relationship",   existing.get("relationship", "")),
+        "messages":       data.get("messages",       existing.get("messages", [])),
+        "used_ids":       data.get("used_ids",       existing.get("used_ids", [])),
+        "answered_count": data.get("answered_count", existing.get("answered_count", 0)),
+        "last_category":  data.get("last_category",  existing.get("last_category", None)),
+        "tribute_text":   data.get("tribute_text",   existing.get("tribute_text", None)),
+        "status":         data.get("status",         existing.get("status", "in_progress")),
+        "photos":         existing.get("photos", []),
+        "created_at":     existing.get("created_at", datetime.utcnow().isoformat()),
+        "updated_at":     datetime.utcnow().isoformat(),
+    }
+    storage[memorial_id] = memorial
+    save_storage(storage)
+    return jsonify(memorial), 200
+
+@app.route("/api/memorials/user/<user_id>", methods=["GET", "OPTIONS"])
+def list_memorials(user_id):
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+    storage   = load_storage()
+    memorials = [m for m in storage.values() if m.get("user_id") == user_id]
+    memorials.sort(key=lambda m: m.get("updated_at", ""), reverse=True)
+    in_progress = [m for m in memorials if m.get("status") == "in_progress"]
+    completed   = [m for m in memorials if m.get("status") == "complete"]
+    return jsonify({"in_progress": in_progress, "completed": completed}), 200
+
+@app.route("/api/memorials/<memorial_id>", methods=["DELETE", "OPTIONS"])
+def delete_memorial(memorial_id):
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+    storage = load_storage()
+    if memorial_id not in storage:
+        return jsonify({"error": "Memorial not found"}), 404
+    del storage[memorial_id]
+    save_storage(storage)
+    return jsonify({"deleted": True}), 200
+
+@app.route("/api/memorials/<memorial_id>/photos", methods=["POST", "OPTIONS"])
+def upload_photo(memorial_id):
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+
+    if "photo" not in request.files:
+        return jsonify({"error": "No photo provided"}), 400
+
+    file      = request.files["photo"]
+    ext       = file.filename.rsplit(".", 1)[-1].lower()
+    allowed   = {"jpg", "jpeg", "png", "gif", "webp"}
+
+    if ext not in allowed:
+        return jsonify({"error": "File type not allowed"}), 400
+
+    # Upload to S3
+    key = f"memorials/{memorial_id}/{uuid.uuid4()}.{ext}"
+    try:
+        s3_client.upload_fileobj(
+            file,
+            S3_BUCKET,
+            key,
+            ExtraArgs={"ContentType": file.content_type},
+        )
+        url = f"https://{S3_BUCKET}.s3.{os.getenv('AWS_S3_REGION', 'ca-central-1')}.amazonaws.com/{key}"
+
+        # Save photo URL to memorial record
+        storage = load_storage()
+        if memorial_id in storage:
+            storage[memorial_id].setdefault("photos", []).append({
+                "url":        url,
+                "key":        key,
+                "uploaded_at": datetime.utcnow().isoformat(),
+            })
+            save_storage(storage)
+
+        return jsonify({"url": url, "key": key}), 200
+
+    except ClientError as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/memorials/<memorial_id>/photos/<path:key>", methods=["DELETE", "OPTIONS"])
+def delete_photo(memorial_id, key):
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+    try:
+        s3_client.delete_object(Bucket=S3_BUCKET, Key=key)
+
+        # Remove from memorial record
+        storage = load_storage()
+        if memorial_id in storage:
+            storage[memorial_id]["photos"] = [
+                p for p in storage[memorial_id].get("photos", [])
+                if p.get("key") != key
+            ]
+            save_storage(storage)
+
+        return jsonify({"deleted": True}), 200
+    except ClientError as e:
+        return jsonify({"error": str(e)}), 500 
+    
+    
+@app.route("/api/health", methods=["GET"])    
 def health():
-    return jsonify({"status": "ok"})
+    storage = load_storage()
+    return jsonify({
+        "status":          "ok",
+        "storage":         "json_file",
+        "memorials_saved": len(storage),
+        "storage_file":    str(STORAGE_FILE),
+    })
 
 if __name__ == "__main__":
+    print("✓ Enduring Mementos backend starting...")
+    print(f"✓ Memorials will be saved to: {STORAGE_FILE}")
     app.run(debug=True, port=5000)
-    
