@@ -31,6 +31,7 @@ const styles = `
   }
 
   .nav-logo {
+  min-width: 200px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.25rem;
     font-weight: 300;

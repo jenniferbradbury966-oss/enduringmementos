@@ -562,5 +562,189 @@
     "photos": [],
     "created_at": "2026-03-16T05:33:53.718615",
     "updated_at": "2026-03-16T05:58:10.150709"
+  },
+  "mem_1774309613246_r2z1n": {
+    "id": "mem_1774309613246_r2z1n",
+    "user_id": "user_1773633880142_whpk0",
+    "name": "Fran",
+    "relationship": "daughter",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Fran. My relationship to them: daughter. Please warmly welcome me and ask your first gentle question to begin.",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "Welcome, and thank you for being here. Creating something to honour Fran is such a beautiful act of love, and I'll walk alongside you gently at whatever pace feels right.\n\nTo begin \u2014 could you tell me a little about who Fran was as a person? Whatever comes to mind first is perfect."
+      },
+      {
+        "role": "user",
+        "content": "Frans wa"
+      },
+      {
+        "role": "assistant",
+        "content": "Take your time \u2014 there's no rush at all. Whenever you're ready, I'm here."
+      },
+      {
+        "role": "user",
+        "content": "Fran was a great lady"
+      },
+      {
+        "role": "assistant",
+        "content": "She sounds wonderful. What a lovely way to describe her \u2014 a great lady.\n\nWhat do you think it was about Fran that made her so great?"
+      },
+      {
+        "role": "user",
+        "content": "Her cooking and the things that she knitted for everyone"
+      },
+      {
+        "role": "assistant",
+        "content": "What a beautiful combination \u2014 nourishing people with food and wrapping them in warmth with her knitting. Fran sounds like someone who really showed her love through what she made with her hands.\n\nDo you have a favourite thing she cooked or knitted that sticks in your memory?"
+      },
+      {
+        "role": "user",
+        "content": "She loved knitting socks and mittens. She always said everyone needs socks. :)"
+      },
+      {
+        "role": "assistant",
+        "content": "That made me smile \u2014 \"everyone needs socks.\" That sounds so perfectly Fran, practical and loving all at once.\n\nDid she have a particular person she loved knitting for, or was she always making things for everyone around her?"
+      },
+      {
+        "role": "user",
+        "content": "She was always make things for everyone. either food and socks was her go toos"
+      },
+      {
+        "role": "assistant",
+        "content": "She sounds like someone whose love language was taking care of people in the most tangible, beautiful ways \u2014 making sure everyone was fed and warm.\n\nYou mentioned her cooking too \u2014 was there a particular dish she made that you'll always associate with her?"
+      },
+      {
+        "role": "user",
+        "content": "Steak and homemade fries, with ketchup and vinegar. Home baked cookies for desert."
+      },
+      {
+        "role": "assistant",
+        "content": "Oh, that sounds like the kind of meal that feels like a hug \u2014 steak and homemade fries with ketchup and vinegar, and then homemade cookies to finish. You can almost smell it.\n\nWhen you think about sitting down to one of those meals with Fran, is there a particular moment or memory that comes to mind?"
+      },
+      {
+        "role": "user",
+        "content": "She liked to travelling, various art and going to museums"
+      },
+      {
+        "role": "assistant",
+        "content": "It's lovely to hear how many sides there were to Fran \u2014 someone who could spend a day wandering through a museum or art gallery, and then come home and cook a feast or settle in with her knitting needles.\n\nAs you think back on everything she brought into your life \u2014 her cooking, her knitting, her curiosity about the world \u2014 how do you feel she shaped who you are?"
+      },
+      {
+        "role": "user",
+        "content": "She taught me that I prefer to wear cotton socks but also appreciated her talent"
+      },
+      {
+        "role": "assistant",
+        "content": "That's such a tender thing to carry with you \u2014 both the practical gift of knowing what you like, and a deep appreciation for the talent and love she poured into everything she made.\n\nAs we come to the end of our time together, I'd love to ask one final question: when you imagine people reading Fran's memorial and learning about her for the first time, what is the one thing you most want them to know or remember about her?"
+      }
+    ],
+    "used_ids": [],
+    "answered_count": 8,
+    "last_category": null,
+    "tribute_text": "Fran was, in every sense of the word, a great lady. She moved through life with a quiet and generous love that expressed itself most fully through what she created with her hands \u2014 whether that was a perfectly cooked meal or a carefully knitted pair of socks. Those who knew her understood that her gifts were never simply objects or food, but something deeper: a steady, practical declaration that the people around her mattered and were worth caring for.\n\nHer kitchen and her knitting needles were where Fran truly spoke her heart. She had a gift for making food that felt like a warm embrace \u2014 steak and homemade fries with ketchup and vinegar, followed by cookies baked from scratch \u2014 the kind of meal that lingers in memory long after the plates are cleared. And her knitting was just as constant and just as generous, with socks and mittens flowing steadily from her needles to the hands and feet of everyone she loved. She was known to say that everyone needs socks, and in that small, cheerful belief lived so much of who she was.\n\nThere was more to Fran than her cooking and her craft, though both were remarkable. She carried a curiosity about the world that drew her toward travel, art, and the quiet wonder of museums, always reaching for beauty and meaning beyond her own doorstep. She passed that spirit of appreciation on to those she loved, teaching them not only practical things but how to notice and value what is true and handmade and real. That is the Fran worth remembering \u2014 warm, talented, endlessly giving, and wonderfully, perfectly herself.",
+    "status": "complete",
+    "photos": [
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/68280331-d69f-4433-a11e-004e742f081f.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/68280331-d69f-4433-a11e-004e742f081f.jpeg",
+        "uploaded_at": "2026-03-23T23:53:18.048500"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/e5b3b92d-aedf-4f1d-883f-6a5f21e33020.jpg",
+        "key": "memorials/mem_1774309613246_r2z1n/e5b3b92d-aedf-4f1d-883f-6a5f21e33020.jpg",
+        "uploaded_at": "2026-03-23T23:53:35.633929"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/a50a336d-989e-4422-825d-242920a5ab15.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/a50a336d-989e-4422-825d-242920a5ab15.jpeg",
+        "uploaded_at": "2026-03-23T23:54:18.161403"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/5180966a-0be0-4010-a66f-f4715d1b3b01.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/5180966a-0be0-4010-a66f-f4715d1b3b01.jpeg",
+        "uploaded_at": "2026-03-24T00:17:43.419561"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/8fd6edfb-bbf4-47a7-bbc2-1b95a924d9c5.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/8fd6edfb-bbf4-47a7-bbc2-1b95a924d9c5.jpeg",
+        "uploaded_at": "2026-03-24T00:17:55.898193"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/fcaed4c2-1fdf-4da2-bd7d-75aa52e189cd.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/fcaed4c2-1fdf-4da2-bd7d-75aa52e189cd.jpeg",
+        "uploaded_at": "2026-03-24T00:18:05.429898"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/eb4f9769-d79f-421f-8dc1-341e1ce463e5.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/eb4f9769-d79f-421f-8dc1-341e1ce463e5.jpeg",
+        "uploaded_at": "2026-03-24T00:30:14.772888"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/e106cb0d-23e6-4e26-8741-f5b6f199bc5a.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/e106cb0d-23e6-4e26-8741-f5b6f199bc5a.jpeg",
+        "uploaded_at": "2026-03-24T00:30:26.161550"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/bf93bac5-7225-4990-8f48-f659803b0473.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/bf93bac5-7225-4990-8f48-f659803b0473.jpeg",
+        "uploaded_at": "2026-03-24T00:58:25.238934"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/fee8ba64-1858-41b3-8d34-8be450cb727e.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/fee8ba64-1858-41b3-8d34-8be450cb727e.jpeg",
+        "uploaded_at": "2026-03-24T00:58:32.043358"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/6c3590b1-f839-4c68-940a-8abfa2aecfc5.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/6c3590b1-f839-4c68-940a-8abfa2aecfc5.jpeg",
+        "uploaded_at": "2026-03-24T01:05:33.927987"
+      },
+      {
+        "url": "https://enduring-mementos-photos-2026.s3.ca-central-1.amazonaws.com/memorials/mem_1774309613246_r2z1n/56f79f62-0b63-44b9-8e03-72eda03c78e2.jpeg",
+        "key": "memorials/mem_1774309613246_r2z1n/56f79f62-0b63-44b9-8e03-72eda03c78e2.jpeg",
+        "uploaded_at": "2026-03-24T01:05:43.040098"
+      }
+    ],
+    "created_at": "2026-03-23T23:46:58.201419",
+    "updated_at": "2026-03-24T01:05:28.420578"
+  },
+  "mem_1774315071159_8zxuh": {
+    "id": "mem_1774315071159_8zxuh",
+    "user_id": "user_1773633880142_whpk0",
+    "name": "Kevin Avatar",
+    "relationship": "other loved one",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I'd like to create a memorial for Kevin Avatar. My relationship to them: other loved one. Please warmly welcome me and ask your first gentle question to begin.",
+        "hidden": true
+      },
+      {
+        "role": "assistant",
+        "content": "Welcome, and thank you for being here. Creating this memorial for Kevin Avatar is such a meaningful thing to do \u2014 a way to hold onto who they were and keep their story alive.\n\nWhen you're ready, I'd love to start simply: **How would you describe Kevin Avatar in just a few words \u2014 the kind of person they were?**\n\nAnd please know, there's no rush here \u2014 we'll go at whatever pace feels right for you."
+      },
+      {
+        "role": "user",
+        "content": "I'd like to skip this one.",
+        "skipped": true
+      },
+      {
+        "role": "assistant",
+        "content": "Of course \u2014 we can absolutely start somewhere else entirely.\n\n**Is there a particular memory of Kevin Avatar that seems to find its way back to you \u2014 one that just keeps returning?**"
+      }
+    ],
+    "used_ids": [],
+    "answered_count": 0,
+    "last_category": null,
+    "tribute_text": null,
+    "status": "in_progress",
+    "photos": [],
+    "created_at": "2026-03-24T01:17:58.252479",
+    "updated_at": "2026-03-24T01:18:56.837873"
   }
 }
