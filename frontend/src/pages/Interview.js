@@ -167,6 +167,79 @@ const styles = `
   .btn-new-memorial:hover:not(:disabled) { background: var(--brown-mid); transform: translateY(-1px); }
   .btn-new-memorial:disabled { opacity: 0.45; cursor: not-allowed; }
 
+  /* ── CONSENT ── */
+  .consent-screen {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    padding: 60px 24px; animation: fadeUp 0.7s ease both;
+  }
+
+  .consent-card {
+    background: white; max-width: 520px; width: 100%;
+    padding: 52px 48px; box-shadow: 0 24px 64px rgba(60,47,47,0.1);
+  }
+
+  .consent-label {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+
+  .consent-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+    font-weight: 300; line-height: 1.2; color: var(--brown); margin-bottom: 20px;
+  }
+
+  .consent-title em { font-style: italic; color: var(--dusty-rose); }
+
+  .consent-body {
+    font-size: 0.88rem; color: #2c2c2c; line-height: 1.85;
+    margin-bottom: 28px; font-weight: 400;
+  }
+
+  .consent-points {
+    list-style: none; display: flex; flex-direction: column;
+    gap: 10px; margin-bottom: 28px;
+    padding: 20px 20px; background: rgba(245,239,230,0.6);
+    border-left: 2px solid var(--rose-light);
+  }
+
+  .consent-points li {
+    font-size: 0.85rem; color: var(--brown-mid); line-height: 1.6;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+
+  .consent-points li::before {
+    content: '✦'; color: var(--gold); font-size: 0.5rem;
+    flex-shrink: 0; margin-top: 5px;
+  }
+
+  .consent-check-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 24px; cursor: pointer;
+  }
+
+  .consent-check-row input[type="checkbox"] {
+    width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+    accent-color: var(--brown); cursor: pointer;
+  }
+
+  .consent-check-label {
+    font-size: 0.85rem; color: var(--brown-mid); line-height: 1.65; cursor: pointer;
+  }
+
+  .consent-check-label strong { color: var(--brown); font-weight: 500; }
+
+  .consent-actions { display: flex; flex-direction: column; gap: 10px; }
+
+  .btn-consent-proceed {
+    width: 100%; padding: 15px; background: var(--brown); color: var(--cream);
+    border: none; font-family: 'Jost', sans-serif; font-size: 0.78rem;
+    font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.3s, transform 0.2s;
+  }
+
+  .btn-consent-proceed:hover:not(:disabled) { background: var(--brown-mid); transform: translateY(-1px); }
+  .btn-consent-proceed:disabled { opacity: 0.4; cursor: not-allowed; }
+
   /* ── SETUP ── */
   .setup-screen {
     flex: 1; display: flex; align-items: center; justify-content: center;
@@ -411,17 +484,58 @@ const styles = `
   .btn-cancel { flex: 1; padding: 12px; background: transparent; color: var(--brown); border: 1px solid rgba(107,79,79,0.3); font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
   .btn-cancel:hover { background: var(--brown); color: var(--cream); }
 
+  /* ── GRIEF SUPPORT FOOTER ── */
+  .grief-support-bar {
+    background: rgba(138,158,140,0.12);
+    border-top: 1px solid rgba(138,158,140,0.25);
+    padding: 14px 24px;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  .grief-support-bar p {
+    font-size: 0.78rem; font-weight: 400; color: rgba(26,26,26,0.55);
+    line-height: 1.7; font-family: 'Cormorant Garamond', serif; font-style: italic;
+  }
+
+  .grief-support-bar a {
+    color: var(--sage); text-decoration: none; font-weight: 500;
+    border-bottom: 1px solid rgba(138,158,140,0.4); transition: color 0.2s, border-color 0.2s;
+    font-style: normal;
+  }
+
+  .grief-support-bar a:hover { color: #5a7d5c; border-bottom-color: #5a7d5c; }
+
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
   @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
 
   @media (max-width: 600px) {
-    .setup-card, .complete-card { padding: 32px 24px; }
+    .setup-card, .complete-card, .consent-card { padding: 32px 24px; }
     .interview-screen { padding: 80px 14px 14px; }
     .input-footer { flex-direction: column; align-items: flex-start; }
     .dashboard-screen { padding: 60px 16px 40px; }
   }
 `;
+
+// ─── GRIEF SUPPORT FOOTER ─────────────────────────────────────────────────────
+function GriefSupportBar() {
+  return (
+    <div className="grief-support-bar">
+      <p>
+        If you're finding this difficult, you're not alone.{" "}
+        Professional grief support is available.{" "}
+        <a href="https://www.camh.ca/en/health-info/crisis-resources" target="_blank" rel="noopener noreferrer">
+          Crisis Services Canada
+        </a>
+        : 1‑833‑456‑4566 &nbsp;·&nbsp;{" "}
+        <a href="https://www.counsellingbc.com/grief-counselling/" target="_blank" rel="noopener noreferrer">
+          Find a grief counsellor
+        </a>
+      </p>
+    </div>
+  );
+}
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
 export default function Interview() {
@@ -429,6 +543,7 @@ export default function Interview() {
   const [memorials, setMemorials]       = useState([]);
   const [activeId, setActiveId]         = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
+  const [consentChecked, setConsentChecked] = useState(false);
 
   const [setupName, setSetupName]               = useState("");
   const [setupRelationship, setSetupRelationship] = useState("");
@@ -575,7 +690,7 @@ export default function Interview() {
     }
   };
 
-  // ── Send answer — Claude decides the next question organically ──
+  // ── Send answer ──
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
     const userText    = input.trim();
@@ -591,21 +706,17 @@ export default function Interview() {
 
     const isFinal = newAnswered >= ANSWERS_NEEDED - 1;
 
-    // Update depth pill based on progress
     if (newAnswered >= 6) setCurrentDepth("deep");
     else if (newAnswered >= 3) setCurrentDepth("medium");
     else setCurrentDepth("easy");
 
-    // Build a fresh system prompt reflecting current progress
     const systemPrompt = getSystemPrompt(newAnswered, newMessages);
 
     try {
-      // Pass the full conversation — Claude reads it and decides the next question naturally
       const apiMsgs = newMessages
         .filter(m => !m.hidden)
         .map(m => ({ role: m.role, content: m.content }));
 
-      // For the final question, add a closing instruction
       if (isFinal) {
         apiMsgs.push({
           role: "user",
@@ -638,7 +749,7 @@ export default function Interview() {
     }
   };
 
-  // ── Skip — asks Claude to move on naturally without the current topic ──
+  // ── Skip ──
   const skipQuestion = async () => {
     if (loading) return;
     setLoading(true);
@@ -725,9 +836,51 @@ export default function Interview() {
                 </div>
               )}
 
-              <button className="btn-new-memorial" onClick={() => setScreen("setup")} disabled={atLimit}>
+              <button className="btn-new-memorial" onClick={() => setScreen("consent")} disabled={atLimit}>
                 {memorials.length === 0 ? "Begin a Memorial →" : "+ Start Another Memorial"}
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── CONSENT ── */}
+        {screen === "consent" && (
+          <div className="consent-screen">
+            <div className="consent-card">
+              <p className="consent-label">Before You Begin</p>
+              <h1 className="consent-title">A few things<br /><em>to know</em></h1>
+              <p className="consent-body">
+                Enduring Mementos is a memorial creation tool grounded in grief counselling
+                principles. It is not a clinical service or therapy, and it does not simulate
+                or recreate your loved one. Everything in your memorial will be written in your
+                own words — we simply help you find them.
+              </p>
+              <ul className="consent-points">
+                <li>Your memories and photos are private and will never be used to train AI models or shared with third parties.</li>
+                <li>Your content is retained for 90 days on the free tier. You can export or delete it at any time.</li>
+                <li>You can skip any question, pause, and return whenever you're ready — there is no pressure.</li>
+                <li>If you are experiencing significant distress, we encourage you to speak with a qualified grief counsellor alongside using this platform.</li>
+              </ul>
+              <label className="consent-check-row">
+                <input
+                  type="checkbox"
+                  checked={consentChecked}
+                  onChange={e => setConsentChecked(e.target.checked)}
+                />
+                <span className="consent-check-label">
+                  I understand that Enduring Mementos is a <strong>memorial creation tool</strong>, not a clinical service, and I agree to the use of my data as described above.
+                </span>
+              </label>
+              <div className="consent-actions">
+                <button
+                  className="btn-consent-proceed"
+                  onClick={() => { setConsentChecked(false); setScreen("setup"); }}
+                  disabled={!consentChecked}
+                >
+                  I Understand — Continue →
+                </button>
+                <button className="btn-back-link" onClick={() => setScreen("dashboard")}>← Back to my memorials</button>
+              </div>
             </div>
           </div>
         )}
@@ -764,6 +917,8 @@ export default function Interview() {
                   <option value="grandchild">Grandchild</option>
                   <option value="grandparent">Grandparent</option>
                   <option value="close friend">Close Friend</option>
+                  <option value="aunt">Aunt</option>
+                  <option value="uncle">Uncle</option>
                   <option value="other loved one">Other Loved One</option>
                 </select>
               </div>
@@ -772,7 +927,7 @@ export default function Interview() {
                 <button className="btn-start" onClick={startInterview} disabled={!setupName.trim() || loading}>
                   {loading ? "Starting…" : "Begin the Conversation →"}
                 </button>
-                <button className="btn-back-link" onClick={() => setScreen("dashboard")}>← Back to my memorials</button>
+                <button className="btn-back-link" onClick={() => setScreen("consent")}>← Back</button>
               </div>
             </div>
           </div>
@@ -833,27 +988,23 @@ export default function Interview() {
               <div ref={messagesEndRef} />
             </div>
 
-{answeredCount >= ANSWERS_NEEDED - 1 && (
-  <div style={{ textAlign: 'center', padding: '12px 0 4px' }}>
-    <button className="btn-view" onClick={() => {
-      const completedMemorial = memorials.find(m => m.id === activeId);
-      if (completedMemorial) {
-        const finalMemorial = {
-          ...completedMemorial,
-          messages,
-          answeredCount,
-        };
-        localStorage.setItem("enduring_mementos_progress", JSON.stringify(finalMemorial));
-        saveToBackend(finalMemorial, "complete");
-      }
-      deleteMemorial(activeId);
-      setMemorials(loadAllMemorials());
-      setScreen("complete");
-    }}>
-      View Your Memorial →
-    </button>
-  </div>
-)}
+            {answeredCount >= ANSWERS_NEEDED - 1 && (
+              <div style={{ textAlign: 'center', padding: '12px 0 4px' }}>
+                <button className="btn-view" onClick={() => {
+                  const completedMemorial = memorials.find(m => m.id === activeId);
+                  if (completedMemorial) {
+                    const finalMemorial = { ...completedMemorial, messages, answeredCount };
+                    localStorage.setItem("enduring_mementos_progress", JSON.stringify(finalMemorial));
+                    saveToBackend(finalMemorial, "complete");
+                  }
+                  deleteMemorial(activeId);
+                  setMemorials(loadAllMemorials());
+                  setScreen("complete");
+                }}>
+                  View Your Memorial →
+                </button>
+              </div>
+            )}
 
             <div className="input-area">
               <div className="input-row">
@@ -902,6 +1053,9 @@ export default function Interview() {
             </div>
           </div>
         )}
+
+        {/* ── GRIEF SUPPORT FOOTER — visible on all screens ── */}
+        <GriefSupportBar />
 
       </div>
     </>

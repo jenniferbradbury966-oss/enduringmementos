@@ -1,3 +1,4 @@
+import WaitlistModal from "../components/WaitlistModal";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -840,6 +841,7 @@ function useIntersection(ref, threshold = 0.15) {
 export default function Home() {
   const [visibleMsg, setVisibleMsg] = useState(0);
   const [showTyping, setShowTyping] = useState(false);
+  const [showWaitlist, setShowWaitlist] = useState(false);
   const stepsRef   = useRef(null);
   const pricingRef = useRef(null);
   const stepsVis   = useIntersection(stepsRef);
@@ -1048,9 +1050,10 @@ export default function Home() {
                 <li>Priority support</li>
               </ul>
               <button className="btn-secondary"
-                style={{ width: '100%', color: 'var(--cream)', borderColor: 'rgba(245,239,230,0.3)' }}>
-                Join the Waitlist
-              </button>
+  onClick={() => setShowWaitlist(true)}
+  style={{ width: '100%', color: 'var(--cream)', borderColor: 'rgba(245,239,230,0.3)' }}>
+  Join the Waitlist
+</button> 
             </div>
           </div>
         </div>
@@ -1102,6 +1105,7 @@ export default function Home() {
           <span>Made with care in Ontario, Canada 🍁</span>
         </div>
       </footer>
+      <WaitlistModal isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
     </>
   );
 }

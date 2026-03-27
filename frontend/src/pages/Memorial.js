@@ -1,3 +1,4 @@
+import GriefSupportBar from "../components/GriefSupportBar";
 import { useState, useEffect, useRef } from "react";
 
 const styles = `
@@ -324,6 +325,7 @@ export default function Memorial() {
       setMemorialData(data);
       setState("generating");
 
+      
       // Extract memory pairs
       const visibleMessages = data.messages.filter(m => !m.hidden);
       const memoryPairs = [];
@@ -355,6 +357,15 @@ export default function Memorial() {
       if (!response.ok) throw new Error("Could not generate tribute");
       const result = await response.json();
       setTribute(result.tribute);
+
+      // Fetch existing photos from backend
+      try {
+        const photoRes = await fetch(`${FLASK_URL}/api/memorials/${data.id}/photos`);
+        if (photoRes.ok) {
+          const photoData = await photoRes.json();
+          if (photoData.photos) setPhotos(photoData.photos);
+        }
+      } catch (e) { console.warn("Could not load photos:", e); }
 
       // Save tribute back to localStorage so it persists on return
       try {
@@ -631,8 +642,8 @@ export default function Memorial() {
 
           </div>
         )}
-
-      </div>
+       </div> 
+      <GriefSupportBar />
     </>
   );
 }

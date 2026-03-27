@@ -2,7 +2,7 @@
 Enduring Mementos — Flask Backend
 ──────────────────────────────────
 Storage: JSON file (no database needed yet)
-Photos:  Coming soon (S3 not configured yet)
+Photos:  AWS S3 (ca-central-1)
 
 Routes:
   POST /api/interview              — Claude interview conversation
@@ -10,6 +10,9 @@ Routes:
   POST /api/memorials              — Save / update a memorial
   GET  /api/memorials/user/<uid>   — Load all memorials for a user
   DELETE /api/memorials/<id>       — Delete a memorial
+  POST /api/memorials/<id>/photos  — Upload a photo to S3
+  GET  /api/memorials/<id>/photos  — List photos for a memorial
+  DELETE /api/memorials/<id>/photos/<key> — Delete a photo
   GET  /api/health                 — Health check
 """
 
@@ -26,7 +29,7 @@ from botocore.exceptions import ClientError
 load_dotenv()
 
 app    = Flask(__name__)
-CORS(app, 
+CORS(app,
      origins="*",
      allow_headers=["Content-Type", "Authorization"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -58,6 +61,18 @@ def save_storage(data):
     except Exception as e:
         print(f"Storage save failed: {e}")
 
+def get_presigned_url(key, expiry=3600):
+    """Generate a presigned URL so photos display regardless of bucket policy."""
+    try:
+        return s3_client.generate_presigned_url(
+            "get_object",
+            Params={"Bucket": S3_BUCKET, "Key": key},
+            ExpiresIn=expiry,
+        )
+    except ClientError as e:
+        print(f"Presigned URL failed: {e}")
+        return f"https://{S3_BUCKET}.s3.ca-central-1.amazonaws.com/{key}"
+
 def build_interview_system_prompt(name, relationship):
     return f"""You are a compassionate, unhurried guide helping someone create a memorial for {name}, their {relationship}.
 
@@ -73,6 +88,11 @@ EMOTIONAL GUIDANCE:
 - Move at their pace — grief has no timeline
 - Never imply they should feel differently than they do
 - Never ask about how {name} died unless the user brings it up
+- If someone expresses hopelessness, inability to function, or prolonged inability 
+  to cope, gently acknowledge their pain with warmth and compassion, then 
+  encourage them to reach out to a grief counselor or contact a support line 
+  such as the Crisis Services Canada line (1-833-456-4566) or their local mental 
+  health support before continuing
 
 TONE: Warm, gentle, unhurried, celebratory of who {name} was.
 
@@ -184,22 +204,42 @@ def delete_memorial(memorial_id):
     save_storage(storage)
     return jsonify({"deleted": True}), 200
 
+
+# ── FIX: Separate GET and POST into their own functions ──
+
+@app.route("/api/memorials/<memorial_id>/photos", methods=["GET", "OPTIONS"])
+def get_photos(memorial_id):
+    """Return photo list with fresh presigned URLs so images display in browser."""
+    if request.method == "OPTIONS":
+        return jsonify({}), 200
+    storage = load_storage()
+    photos  = storage.get(memorial_id, {}).get("photos", [])
+    # Refresh presigned URLs so they don't expire
+    refreshed = []
+    for p in photos:
+        refreshed.append({
+            **p,
+            "url": get_presigned_url(p["key"]),
+        })
+    return jsonify({"photos": refreshed}), 200
+
+
 @app.route("/api/memorials/<memorial_id>/photos", methods=["POST", "OPTIONS"])
 def upload_photo(memorial_id):
+    """Upload a photo to S3 and save the record."""
     if request.method == "OPTIONS":
         return jsonify({}), 200
 
     if "photo" not in request.files:
         return jsonify({"error": "No photo provided"}), 400
 
-    file      = request.files["photo"]
-    ext       = file.filename.rsplit(".", 1)[-1].lower()
-    allowed   = {"jpg", "jpeg", "png", "gif", "webp"}
+    file    = request.files["photo"]
+    ext     = file.filename.rsplit(".", 1)[-1].lower() if "." in file.filename else ""
+    allowed = {"jpg", "jpeg", "png", "gif", "webp"}
 
     if ext not in allowed:
         return jsonify({"error": "File type not allowed"}), 400
 
-    # Upload to S3
     key = f"memorials/{memorial_id}/{uuid.uuid4()}.{ext}"
     try:
         s3_client.upload_fileobj(
@@ -208,17 +248,20 @@ def upload_photo(memorial_id):
             key,
             ExtraArgs={"ContentType": file.content_type},
         )
-        url = f"https://{S3_BUCKET}.s3.{os.getenv('AWS_S3_REGION', 'ca-central-1')}.amazonaws.com/{key}"
 
-        # Save photo URL to memorial record
+        # Generate presigned URL so it renders immediately in the browser
+        url = get_presigned_url(key)
+
+        # Save record — indentation fixed
         storage = load_storage()
-        if memorial_id in storage:
-            storage[memorial_id].setdefault("photos", []).append({
-                "url":        url,
-                "key":        key,
-                "uploaded_at": datetime.utcnow().isoformat(),
-            })
-            save_storage(storage)
+        if memorial_id not in storage:
+            storage[memorial_id] = {}
+        storage[memorial_id].setdefault("photos", []).append({
+            "url":          url,
+            "key":          key,
+            "uploaded_at":  datetime.utcnow().isoformat(),
+        })
+        save_storage(storage)
 
         return jsonify({"url": url, "key": key}), 200
 
@@ -232,8 +275,6 @@ def delete_photo(memorial_id, key):
         return jsonify({}), 200
     try:
         s3_client.delete_object(Bucket=S3_BUCKET, Key=key)
-
-        # Remove from memorial record
         storage = load_storage()
         if memorial_id in storage:
             storage[memorial_id]["photos"] = [
@@ -241,13 +282,12 @@ def delete_photo(memorial_id, key):
                 if p.get("key") != key
             ]
             save_storage(storage)
-
         return jsonify({"deleted": True}), 200
     except ClientError as e:
-        return jsonify({"error": str(e)}), 500 
-    
-    
-@app.route("/api/health", methods=["GET"])    
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/health", methods=["GET"])
 def health():
     storage = load_storage()
     return jsonify({
